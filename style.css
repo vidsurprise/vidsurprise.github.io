@@ -9,7 +9,7 @@ body {
   align-items: center;
   min-height: 100vh;
   text-align: center;
-  overflow: hidden;
+  
 }
 
 .title {
@@ -55,4 +55,11 @@ body {
     font-size: 1.6rem;
     padding: 20px 40px;
   }
+}
+#videoContainer {
+  z-index: 1;
+}
+
+#adContainer {
+  z-index: 0;
 }
