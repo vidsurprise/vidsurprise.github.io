@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fredoka', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 3rem;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffffaa;
+  margin-bottom: 40px;
+  padding: 10px 20px;
+  border-radius: 12px;
+}
+
+#launchButton {
+  font-size: 2.2rem;
+  padding: 25px 60px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ff00cc, #3333ff);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff00cc, 0 0 20px #3333ff;
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+  animation: pulse 2.5s infinite;
+}
+
+#launchButton:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #ff00cc, 0 0 30px #3333ff;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.1rem;
+    padding: 8px 16px;
+  }
+
+  #launchButton {
+    font-size: 1.6rem;
+    padding: 20px 40px;
+  }
+}
