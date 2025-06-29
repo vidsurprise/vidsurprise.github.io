@@ -63,3 +63,10 @@ body {
 #adContainer {
   z-index: 0;
 }
+.description {
+  max-width: 800px;
+  color: #ccc;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  padding: 0 20px;
+}

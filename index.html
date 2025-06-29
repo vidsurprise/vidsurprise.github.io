@@ -3,27 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Random Video Picker</title>
+  <title>Random Video Picker | VidSurprise</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap" rel="stylesheet" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2562067410305620"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 </head>
 <body>
 
   <h1 class="title">🎲 Random YouTube Video Launcher</h1>
+
+  <!-- How It Works -->
+  <section class="description">
+    <h2 style="color: #00ffff;">How it Works</h2>
+    <p>Welcome to <strong>VidSurprise</strong> — the place where boredom ends and randomness begins! Just click the button below and we’ll show you a totally random YouTube video from our hand-picked collection. Every click is a new surprise — it might be funny, weird, or oddly satisfying. Perfect for killing time or discovering something new.</p>
+  </section>
+
   <button id="launchButton">🎬 Launch Random Video</button>
 
-  <!-- Container for embedded YouTube video -->
+  <!-- Embedded YouTube video appears here -->
   <div id="videoContainer" style="margin-top: 30px;"></div>
 
-  <!-- Next Video Button (hidden initially) -->
+  <!-- Next Button -->
   <button id="nextButton" style="display:none; margin-top: 20px; font-size: 1.8rem; padding: 15px 40px; border-radius: 15px; cursor: pointer; background: linear-gradient(135deg, #ff00cc, #3333ff); color: white; border: none; box-shadow: 0 0 10px #ff00cc, 0 0 20px #3333ff;">▶️ Next Random Video</button>
 
-  <div id="adContainer" style="margin-top: 40px; width: 800px; height: 90px; background-color: #222; color: #ccc; display: flex; justify-content: center; align-items: center; border-radius: 12px;">
-    <!-- Ad placeholder -->
-    <p>Ad Space - Your Ad Here</p>
-  </div>
+  <section id="submit" style="margin-top: 60px; max-width: 800px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+  <h2 style="color:#00ffff;">🎥 Submit a YouTube Video</h2>
+  <p style="color: #ccc;">Got a funny, weird, or surprising video? Help us expand the randomness!</p>
+  <a href="https://forms.gle/YOUR_FORM_ID" target="_blank" 
+     style="display: inline-block; margin-top: 15px; padding: 15px 30px; background: linear-gradient(135deg, #ff00cc, #3333ff); color: white; text-decoration: none; border-radius: 10px; box-shadow: 0 0 10px #ff00cc;">
+    🚀 Submit via Google Form
+  </a>
+</section>
+
+  <!-- Footer -->
+  <footer style="margin-top: 80px; padding: 20px; color: #aaa; font-size: 0.9rem;">
+    <a href="privacy.html" style="color: #00ffff;">Privacy Policy</a> |
+    <a href="terms.html" style="color: #00ffff;">Terms & Conditions</a>
+    <p style="margin-top: 10px;">© 2024 VidSurprise. All rights reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
