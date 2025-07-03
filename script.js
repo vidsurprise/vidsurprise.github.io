@@ -37,3 +37,43 @@ document.getElementById('launchButton').addEventListener('click', () => {
 document.getElementById('nextButton').addEventListener('click', () => {
   embedRandomVideo();
 });
+// Regex-based YouTube video ID validator
+function isValidYouTubeUrl(url) {
+  const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)[\w\-]{11}/;
+  return regex.test(url);
+}
+
+// Handle form reveal
+document.getElementById('showFormBtn').addEventListener('click', () => {
+  document.getElementById('formContainer').style.display = 'block';
+});
+
+// Live validation
+document.getElementById('videoInput').addEventListener('input', () => {
+  const input = document.getElementById('videoInput').value.trim();
+  const isValid = isValidYouTubeUrl(input);
+
+  const submitBtn = document.getElementById('submitVideoBtn');
+  submitBtn.disabled = !isValid;
+  submitBtn.style.background = isValid
+    ? 'linear-gradient(135deg, #00cc66, #00ff99)'
+    : '#666';
+  submitBtn.style.cursor = isValid ? 'pointer' : 'not-allowed';
+});
+
+// Submission action
+document.getElementById('submitVideoBtn').addEventListener('click', () => {
+  const link = document.getElementById('videoInput').value.trim();
+  const status = document.getElementById('statusMessage');
+
+  if (!isValidYouTubeUrl(link)) {
+    status.textContent = "❌ Invalid YouTube link.";
+    return;
+  }
+
+  // TEMP: just logs to console (later: email it, store in DB, etc.)
+  console.log("📩 New submitted video:", link);
+  status.textContent = "✅ Video submitted! Thank you!";
+  document.getElementById('videoInput').value = "";
+  document.getElementById('submitVideoBtn').disabled = true;
+});

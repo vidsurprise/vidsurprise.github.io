@@ -27,14 +27,23 @@
   <!-- Next Button -->
   <button id="nextButton" style="display:none; margin-top: 20px; font-size: 1.8rem; padding: 15px 40px; border-radius: 15px; cursor: pointer; background: linear-gradient(135deg, #ff00cc, #3333ff); color: white; border: none; box-shadow: 0 0 10px #ff00cc, 0 0 20px #3333ff;">▶️ Next Random Video</button>
 
-  <section id="submit" style="margin-top: 60px; max-width: 800px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 12px;">
-  <h2 style="color:#00ffff;">🎥 Submit a YouTube Video</h2>
-  <p style="color: #ccc;">Got a funny, weird, or surprising video? Help us expand the randomness!</p>
-  <a href="https://forms.gle/YOUR_FORM_ID" target="_blank" 
-     style="display: inline-block; margin-top: 15px; padding: 15px 30px; background: linear-gradient(135deg, #ff00cc, #3333ff); color: white; text-decoration: none; border-radius: 10px; box-shadow: 0 0 10px #ff00cc;">
-    🚀 Submit via Google Form
-  </a>
+ <section id="submitSection" style="margin-top: 60px; text-align: center;">
+  <button id="showFormBtn"
+    style="font-size: 1.4rem; padding: 15px 30px; border-radius: 12px; background: linear-gradient(135deg, #ff00cc, #3333ff); color: white; border: none; cursor: pointer;">
+    🎥 Submit a Video
+  </button>
+
+  <div id="formContainer" style="margin-top: 20px; display: none;">
+    <input type="text" id="videoInput" placeholder="Paste YouTube video link..."
+      style="padding: 12px; width: 300px; font-size: 1rem; border-radius: 8px; border: 1px solid #ccc;" />
+    <button id="submitVideoBtn" disabled
+      style="padding: 12px 25px; font-size: 1rem; border: none; border-radius: 10px; margin-left: 10px; background: #666; color: #fff; cursor: not-allowed;">
+      Submit
+    </button>
+    <p id="statusMessage" style="color: #ccc; margin-top: 10px;"></p>
+  </div>
 </section>
+
 
   <!-- Footer -->
   <footer style="margin-top: 80px; padding: 20px; color: #aaa; font-size: 0.9rem;">
