@@ -6,51 +6,101 @@
   <title>Random Video Picker | VidSurprise</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap" rel="stylesheet" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2562067410305620"
-    crossorigin="anonymous"></script>
+
+  <!-- Confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Reward sound -->
+  <audio id="rewardSound" src="https://cdn.pixabay.com/download/audio/2023/03/28/audio_289593d114.mp3?filename=achievement-133564.mp3" preload="auto"></audio>
+
+  <!-- YouTube Iframe API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <body>
 
   <h1 class="title">🎲 Random YouTube Video Launcher</h1>
 
-  <!-- How It Works -->
   <section class="description">
     <h2 style="color: #00ffff;">How it Works</h2>
     <p>Welcome to <strong>VidSurprise</strong> — the place where boredom ends and randomness begins! Just click the button below and we’ll show you a totally random YouTube video from our hand-picked collection. Every click is a new surprise — it might be funny, weird, or oddly satisfying. Perfect for killing time or discovering something new.</p>
   </section>
 
+  <section id="streakSection" style="color: #00ffff; margin-bottom: 20px; font-size: 1.2rem;">
+    🎉 Current Streak: <span id="streak">0</span> | Best Streak: <span id="bestStreak">0</span>
+  </section>
+
   <button id="launchButton">🎬 Launch Random Video</button>
 
-  <!-- Embedded YouTube video appears here -->
+  <!-- Video container -->
   <div id="videoContainer" style="margin-top: 30px;"></div>
 
   <!-- Next Button -->
-  <button id="nextButton" style="display:none; margin-top: 20px; font-size: 1.8rem; padding: 15px 40px; border-radius: 15px; cursor: pointer; background: linear-gradient(135deg, #ff00cc, #3333ff); color: white; border: none; box-shadow: 0 0 10px #ff00cc, 0 0 20px #3333ff;">▶️ Next Random Video</button>
-
- <section id="submitSection" style="margin-top: 60px; text-align: center;">
-  <button id="showFormBtn"
-    style="font-size: 1.4rem; padding: 15px 30px; border-radius: 12px; background: linear-gradient(135deg, #ff00cc, #3333ff); color: white; border: none; cursor: pointer;">
-    🎥 Submit a Video
+  <button id="nextButton" style="display:none; margin-top: 20px; font-size: 1.8rem; padding: 15px 40px; border-radius: 15px; cursor: pointer; background: linear-gradient(135deg, #ff00cc, #3333ff); color: white; border: none; box-shadow: 0 0 10px #ff00cc, 0 0 20px #3333ff;">
+    ▶️ Next Random Video
   </button>
 
-  <div id="formContainer" style="margin-top: 20px; display: none;">
-    <input type="text" id="videoInput" placeholder="Paste YouTube video link..."
-      style="padding: 12px; width: 300px; font-size: 1rem; border-radius: 8px; border: 1px solid #ccc;" />
-    <button id="submitVideoBtn" disabled
-      style="padding: 12px 25px; font-size: 1rem; border: none; border-radius: 10px; margin-left: 10px; background: #666; color: #fff; cursor: not-allowed;">
-      Submit
+  <!-- Submit Video Section -->
+  <section id="submitSection" style="margin-top: 50px; text-align: center; color: #00ffff;">
+    <button id="showFormBtn" style="font-size: 1.4rem; padding: 15px 30px; border-radius: 12px; background: linear-gradient(135deg, #ff00cc, #3333ff); color: white; border: none; cursor: pointer;">
+      🎥 Submit a Video
     </button>
-    <p id="statusMessage" style="color: #ccc; margin-top: 10px;"></p>
-  </div>
-</section>
 
+    <div id="formContainer" style="margin-top: 20px; display: none;">
+      <input type="text" id="videoInput" placeholder="Paste YouTube video link..." style="padding: 12px; width: 300px; font-size: 1rem; border-radius: 8px; border: 1px solid #ccc;" />
+      <button id="submitVideoBtn" disabled style="padding: 12px 25px; font-size: 1rem; border: none; border-radius: 10px; margin-left: 10px; background: #666; color: #fff; cursor: not-allowed;">
+        Submit
+      </button>
+      <p id="statusMessage" style="color: #00ffcc; margin-top: 10px; font-weight: bold;"></p>
+    </div>
+  </section>
 
-  <!-- Footer -->
-  <footer style="margin-top: 80px; padding: 20px; color: #aaa; font-size: 0.9rem;">
-    <a href="privacy.html" style="color: #00ffff;">Privacy Policy</a> |
-    <a href="terms.html" style="color: #00ffff;">Terms & Conditions</a>
-    <p style="margin-top: 10px;">© 2024 VidSurprise. All rights reserved.</p>
-  </footer>
+  <section style="max-width: 800px; margin-top: 50px; padding: 10px; color: #ccc;">
+    <h2 style="color: #00ffff;">Why You'll Love VidSurprise</h2>
+    <p>Each video is selected from a curated list of viral, funny, or eye-catching content. Whether you're bored or curious, you're just a click away from discovering something entertaining.</p>
+
+    <!-- Adsense code placed inside meaningful content -->
+    <div style="margin: 20px 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+           data-ad-slot="xxxxxxxxxx"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <p>Keep your streak going and challenge your friends! Every 10 videos you unlock a surprise animation and can rise in the leaderboard. Submit your favorite YouTube gems too!</p>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq" style="max-width: 800px; margin-top: 80px; padding: 0 20px; color: #ccc; text-align: left;">
+    <h2 style="color: #00ffff; text-align: center;">🤔 Frequently Asked Questions</h2>
+
+    <p><strong>Q: What is VidSurprise?</strong><br>
+      A: It's a fun site that shows you a completely random YouTube video every time you click the button. You never know what you'll get next!</p>
+
+    <p><strong>Q: Where do the videos come from?</strong><br>
+      A: The videos are handpicked by us or submitted by users through the submission box below.</p>
+
+    <p><strong>Q: What types of videos are included?</strong><br>
+      A: Everything from funny memes, epic fails, satisfying visuals, to oddly niche clips!</p>
+
+    <p><strong>Q: How does the streak system work?</strong><br>
+      A: Watch at least half of a video to keep your streak going. Skip early and your streak resets!</p>
+
+    <p><strong>Q: Can I submit my own video?</strong><br>
+      A: Yes! Just paste your YouTube link in the Submit section and it might get featured.</p>
+  </section>
+
+  <!-- Leaderboard Coming Soon Section -->
+  <section class="leaderboard-coming" style="max-width: 800px; margin-top: 80px; padding: 0 20px; color: #ccc; text-align: center;">
+    <h2 style="color: #00ffff;">🏆 Global Streak Leaderboard (Coming Soon)</h2>
+    <p>We’re building a leaderboard where you can compete with others to see who has the longest viewing streak! Your streak will automatically be counted, and soon you’ll be able to view and climb the global rankings.</p>
+    <p>Keep watching, stay consistent, and get ready to be on top!</p>
+  </section>
+
+  <!-- Popup for streak/confetti/warnings -->
+  <div id="popupMessage" style="display:none; position: fixed; top: 20px; background: #111; border: 2px solid #00ffff; padding: 20px 30px; border-radius: 12px; color: #00ffff; font-size: 1.2rem; font-weight: bold; box-shadow: 0 0 15px #00ffff; z-index: 999; animation: fadeInOut 4s ease;"></div>
 
   <script src="script.js"></script>
 </body>
